@@ -1,0 +1,81 @@
+html{font-family:"Bliss-Bold","Helvetica Neue",Helvetica,Roboto,Arial,sans-serif; background-color: #f4f2f2}
+#wrapper{width: 960px; margin: 0 auto; height:auto; background-color:white}
+
+#title{font-size: 80px; text-align: center; color:white; padding: 10px 0px 0px 0px; margin: auto ; margin-left: 20px}
+
+/* NAV HEADER */
+
+#main_heading{font-size: 45px; margin-left: auto ;margin : 40px 0px 0px 0px ; text-align: center;}
+
+#mh{ height: auto; width: auto; margin-right: 00px}
+
+
+/* HEADER/NAV COLOUR */
+nav,header{background-color: #f14a51;}
+
+/* HEADER/NAV SIZE */
+header{height: 100px ; width: auto }
+
+#returndiv{margin-left: 100px}
+
+/*INDEX*/
+
+.main_txt{font-size: 20px; text-align: center}
+
+#q{width: 20px ; display: inline-block}
+
+#map1{margin-left: 100px}
+
+#a {margin: 0px 0px 0px 150px;}
+
+#search{margin-left: 110px;font-size: 30px ;}
+#r{font-size: 30px; width: 225px}
+#t{font-size: 30px; width: 225px}
+#submit{font-size: 30px ;}
+
+#returndiv{max-width: 900px}
+
+#table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 800px;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+tr:hover {background-color: #ddd;}
+
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #f14a51 ;
+    color: white;
+}
+.a{background-color: aqua}
+
+#in{ width: 800px ; height: 60px; margin: 0px 0px 0px 0px ;display: block}
+
+#btn{font-size: 25px; width: 175px ; height: 60px ; margin: 10px 25px 0px 0px ; display: inline-block; padding: 0px 0px 0px 0px }
+
+#Rhed{font-size: 25px}
+
+#hed{font-size: 25px}
+
+#limTXT{display: inline}
+
+#r{margin-left: 200px}
+
+#op {margin-left: 350px}
+
+#error{text-align: center; font-size: 30px; margin: auto}
+
+#error p{margin: 0px 0px 10px 0px}
+
+#GPS{background-color: indianred}
+#Auto{background-color: indianred}

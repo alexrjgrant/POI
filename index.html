@@ -1,0 +1,309 @@
+<html><head>
+	<meta charset="UTF-8">
+	<title id = "t">Alex Grant - Web Application Development</title>
+    
+    <style>
+   
+        html{font-family:"Bliss-Bold","Helvetica Neue",Helvetica,Roboto,Arial,sans-serif; background-color: #f4f2f2;}
+        body{width: 960px; background-color:white; margin: auto ; margin-top: 10px}
+        div {margin-left: 5px ; margin-right: 5px}
+       
+    </style>
+</head>
+
+<body> 
+    <wrapper id = w>
+	<div>
+		<div class="row">
+			<div>
+				<h1>Web Application Development<br>Alex Grant</h1>
+			</div>
+					<hr>
+
+            <div>
+				
+				<strong><p>
+					1 + 2) Write a web service to look up all POIs in a given region. Write a web service to look up all POIs in a given region AND of a given type (e.g. all pubs in Hampshire). 
+                    </p></strong>
+				<p>
+					Below is a link accessing the lookup.php script and also inputs for custom searches.
+                    
+                    If no information is entered, return 400. if no data is found in table, return 404. if wrong method used, return 405. If length is too long, return 414 (length must be less than 100 characters total) 
+                
+				</p>
+               
+                <p><b>Webservice</b></p>
+				<p class="pad-top-20">
+					<a href="https://edward2.solent.ac.uk/~wad1816/Project/PointsOfInterest/lookup.php?r=hampshire&t=pub" style="background: rgba(233,233,233,0.9); padding: 10px 20px; font-weight: bold;">https://edward2.solent.ac.uk/~wad1816/Project/PointsOfInterest/lookup.php?r=hampshire&amp;t=pub</a>
+				</p>
+                <br>
+			</div>
+           
+			<div>
+				<form action = "https://edward2.solent.ac.uk/~wad1816/Project/PointsOfInterest/lookup.php" method = "get">
+                    Region<input name ="r">
+                    Type<input name = "t">
+                    <input type="submit" value = "Submit">
+                </form>
+
+			</div>
+            <br>
+          
+            
+            <strong><p>Quick Links</p></strong>
+            <p>
+					<a href="https://edward2.solent.ac.uk/~wad1816/Project/PointsOfInterest/lookup.php?r=THISISTOLONG THISISTOLONG THISISTOLONG THISISTOLONG THISISTOLONG THISISTOLONG THISISTOLONG THISISTOLONG" style="background: rgba(233,233,233,0.9); padding: 10px 20px; font-weight: bold;">Length Exceeded 414</a>
+				</p>
+            <p>
+					<a href="https://edward2.solent.ac.uk/~wad1816/Project/PointsOfInterest/lookup.php?r=" style="background: rgba(233,233,233,0.9); padding: 10px 20px; font-weight: bold;">No input (Bad Input 400)</a>
+				</p>
+             <p>
+					<a href="https://edward2.solent.ac.uk/~wad1816/Project/PointsOfInterest/lookup.php?r=no results" style="background: rgba(233,233,233,0.9); padding: 10px 20px; font-weight: bold;">No Results(Not Found 404)</a>
+				</p>
+			
+<br>
+            
+			<hr>
+
+			<div>
+				<strong><p>
+					3)	Write a web service to add a POI to the database. Errors should be communicated to the client using HTTP codes.
+                    </p></strong>
+				<p>
+					All inputs must contain data present to avoid 400 bad request error. inputs corresponding to fields in the database with varchar(255) are limited to 254 characters. the description is limited to 500 and the total input length is capped at 1000 or a 414 code will be returned. if the latlng is not a number and is out of range, 400 will be returned. POST method only or 405 error will occur.
+				</p>
+                        
+			</div>
+			<div>
+
+				<form method="POST" action="https://edward2.solent.ac.uk/~wad1816/Project/PointsOfInterest/addPOI.php">
+					<table>
+                        <tr>
+                            <td><p>Name</p></td>
+                            <td><input name = "name"></td>
+                        </tr>
+                        <tr>
+                            <td><p>Type</p></td>
+                            <td><input name = "type"></td>
+                        </tr>
+                        <tr>
+                            <td><p>Region</p></td>
+                            <td><input name = "region"></td>
+                        </tr>
+                        <tr>
+                            <td><p>Country</p></td>
+                            <td><input name = "country"></td>
+                        </tr>
+                        <tr>
+                            <td><p>Description</p></td>
+                            <td><input name = "description"></td>
+                        </tr>
+                        <tr>
+                            <td><p>Lat</p></td>
+                            <td><input name = "lat"></td>
+                        </tr>
+                        <tr>
+                            <td><p>Lon</p></td>
+                            <td><input name = "lon"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td colspan="2"><input type = "submit" ></td>
+                        </tr>
+                    </table>
+				</form>
+                
+                <br>
+                <strong><p>Quick Link</p></strong>
+        
+                 <form method="GET" action="https://edward2.solent.ac.uk/~wad1816/Project/PointsOfInterest/addPOI.php">
+                    <input type = "submit" value="Method not allowed 405" >
+                </form>
+                <form method="POST" action="https://edward2.solent.ac.uk/~wad1816/Project/PointsOfInterest/addPOI.php">
+                    <input name = "name" type = 'hidden' value="Test">
+                    <input name = "type" type = 'hidden' value="Test">
+                    <input name = "region" type = 'hidden' value="Test">
+                    <input name = "country" type = 'hidden' value="Test">
+                    <input name = "description" type = 'hidden' value="Test">
+                    <input name = "lat" type = 'hidden' value="1">
+                    <input name = "lon" type = 'hidden' value="1">
+                    <input type = "submit" value="AddPOI 200" >
+                </form>
+                <form method="POST" action="https://edward2.solent.ac.uk/~wad1816/Project/PointsOfInterest/addPOI.php">
+                    <input name = "name" type = 'hidden' value="TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST">
+                    <input name = "type" type = 'hidden' value="Test">
+                    <input name = "region" type = 'hidden' value="Test">
+                    <input name = "country" type = 'hidden' value="Test">
+                    <input name = "desc" type = 'hidden' value="Test">
+                    <input name = "lat" type = 'hidden' value="1">
+                    <input name = "lon" type = 'hidden' value="1">
+                    <input type = "submit" value="Length Exceeded 414" >
+                </form>
+                <form method="POST" action="https://edward2.solent.ac.uk/~wad1816/Project/PointsOfInterest/addPOI.php">
+                    <input name = "name" type = 'hidden' value="test">
+                    <input name = "type" type = 'hidden' value="Test">
+                    <input name = "region" type = 'hidden' value="Test">
+                    <input name = "country" type = 'hidden' value="">
+                    <input name = "desc" type = 'hidden' value="Test">
+                    <input name = "lat" type = 'hidden' value="1">
+                    <input name = "lon" type = 'hidden' value="1">
+                    <input type = "submit" value="Data missing 400" >
+                </form>
+                <form method="POST" action="https://edward2.solent.ac.uk/~wad1816/Project/PointsOfInterest/addPOI.php">
+                    <input name = "name" type = 'hidden' value="test">
+                    <input name = "type" type = 'hidden' value="Test">
+                    <input name = "region" type = 'hidden' value="Test">
+                    <input name = "country" type = 'hidden' value="Test">
+                    <input name = "desc" type = 'hidden' value="Test">
+                    <input name = "lat" type = 'hidden' value="98798">
+                    <input name = "lon" type = 'hidden' value="1">
+                    <input type = "submit" value="Lon out of range 400" >
+                </form>
+			</div>
+            
+		
+			<br>
+            
+            <hr>
+
+			<div>
+				<strong><p>
+					4)	Write a web service to review a given POI. Again, errors should be communicated to the client using HTTP codes.
+                    </p></strong>
+				<p>
+					ID must be be in database and review must be present and less that 1000 characters. post method only.
+				</p>
+                <form action="https://edward2.solent.ac.uk/~wad1816/Project/PointsOfInterest/addReview.php" method="post">
+				<table>
+                        <tr>
+                            <td><p>ID</p></td>
+                            <td><input name = "id"></td>
+                        </tr>
+                        <tr>
+                            <td><p>Review</p></td>
+                            <td><input name = "review"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td colspan="2"><input type = "submit" ></td>
+                        </tr>
+                </table>
+                </form>
+			</div>
+            <strong><p>Quick Links</p></strong>
+                <form method="GET" action="https://edward2.solent.ac.uk/~wad1816/Project/PointsOfInterest/addReview.php">
+                    <input type = "submit" value="Method Not Allowed 405" >
+            </form>
+            <form method="POST" action="https://edward2.solent.ac.uk/~wad1816/Project/PointsOfInterest/addReview.php">
+                    <input name = "id" type = 'hidden' value="3">
+                    <input name = "review" type = 'hidden' value="TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST">
+                    <input type = "submit" value="Length Exceeded 414" >
+            </form>
+            <form method="POST" action="https://edward2.solent.ac.uk/~wad1816/Project/PointsOfInterest/addReview.php">
+                    <input name = "id" type = 'hidden' value="38473094274087028732408">
+                    <input name = "review" type = 'hidden' value="TEST">
+                    <input type = "submit" value="ID not Found 404" >
+            </form>
+            <form method="POST" action="https://edward2.solent.ac.uk/~wad1816/Project/PointsOfInterest/addReview.php">
+                    <input name = "id" type = 'hidden' value="3">
+                    <input name = "review" type = 'hidden' value="">
+                    <input type = "submit" value="Missing input 400" >
+            </form>
+<br>
+			<hr>
+            
+			<div>
+				<strong><p>
+					5)	Write an AJAX front end for PointsOfInterest which connects to the web service, and in doing so, allows users to look up all POIs in a given region (e.g. Hampshire, Normandy, California, etc). Each matching POI's details should be shown on the AJAX interface.          
+                    </p></strong>
+                <P>Enter Any valid Region into the Search box. Error Messages will scroll into view when created and are located just above the map. valid searches will display icons on map and create a table of information below the map. I wasn't able to delete the existing markers, so multiple searches will over lap markers. table of information will however update to the search term. (key event is on input box so return(13) key will search</P>
+				
+				<a class="btn" href="https://edward2.solent.ac.uk/~wad1816/Project/PointsOfInterest/index.php">PointsOfInterest Home Page</a><br>
+					
+					
+			</div>
+<br>
+			<hr>
+
+
+			<div>
+				<strong><p>
+					6)	A third-party website, VisitHampshire, is a tourist information site for the county of Hampshire. It should allow its own users to look up POIs of a given type, by contacting PointsOfInterest's web service - it should not use its own database. 
+                    </p></strong>
+                <p>Enter any type from the database into the search box.</p>
+                <a class="btn" href="https://edward2.solent.ac.uk/~wad1816/Project/VisitHampshire/index.php">Visit Hampshire Home Page</a><br>
+                
+			</div>
+<br>			
+<hr>
+
+			<div>
+				<strong><p>
+					7)	Add web maps (e.g. Leaflet) to PointsOfInterest's AJAX front end, and, using geolocation, display a map of the area the user is currently in. In addition, on PointsOfInterest's own site, the user should be able to enter a region (e.g. Hampshire, Normandy, California, etc) in the user interface, and then all POIs in that region will be shown on the map as markers.
+                    </p></strong>
+				<p>
+                    the map will center on the user location on load. 
+                     Tracking feature can be turned on and off using the button next to "Track GPS Location" located under the map. this will update the map on user movement. this i've had trouble with this feature updating initially when using a PC but will update every 5s on mobiles. all markers in region searched will display as custom markers
+				</p>
+				<a class="btn" href="https://edward2.solent.ac.uk/~wad1816/Project/PointsOfInterest/index.php">PointsOfInterest Home Page</a><br>
+			</div>
+<br>
+			<hr>
+
+
+			<div>
+				<strong><p>
+					8)	VisitHampshire (NOT PointsOfInterest) should allow a user to review a POI, by interacting with the web service. This requirement should be linked with requirement 6.
+                    </p></strong>
+				<p>
+					Review boxes are located below each result returned. confirmation or error will appear on next page below the search box. 
+				</p>
+				<a class="btn" href="https://edward2.solent.ac.uk/~wad1816/Project/VisitHampshire/index.php">Visit Hampshire Home Page</a><br>
+			</div>
+<br>
+			<hr>
+
+			<div>
+				<strong><p>
+					9)	A user should be able to add a point of interest by clicking on the map. The user must be able to input the details of the point of interest. The point of interest must be saved in the database by interacting with the appropriate web service, and a marker displayed as soon as the web service sends a response back to the client (and not before). 
+                    </p></strong>
+                <p>
+                    popup input prompts will appear when the map is clicked. clicking cancel at any time will exit the new POI request, no error will display as the webservice will not be contacted. errors from webservice will be displayed above map.
+                </p>
+				<a class="btn" href="https://edward2.solent.ac.uk/~wad1816/Project/PointsOfInterest/index.php">PointsOfInterest Home Page</a><br>
+			</div>
+<br>
+			<hr>
+
+
+			<div>
+				<strong><p>
+					10)	As the user moves the map, POIs in the currently-visible area should be shown (you will need to write a new web service for this). Details of the POI (including the description) should appear when the user clicks a marker.
+                    </p></strong>
+				<p> This feature can conflict with the regular search, so must be activated using the button next to "Show all POIs in frame" (under map) new POIs will be diplayed as the map moves. POIs will not be able to be removed so some lag may occur if map is moved constantly due to multiple copies of POIs being created. table of data will update and only contain data on POIs on screen whilst in this mode. custom markers will display.</p>
+                    
+                    <a class="btn" href="https://edward2.solent.ac.uk/~wad1816/Project/PointsOfInterest/index.php">PointsOfInterest Home Page</a><br>
+                    
+            </div>
+            <br>
+            	<hr>
+
+
+			<div>
+				<strong><p>
+					11)	The AJAX front end should also allow a user to review a point of interest, by interacting with the web service. This must be done fully with JavaScript and AJAX; the user must not be directed to a new page.
+                
+                    </p></strong>
+				<p>
+                    To review a POI, some results must be returned. once results are displayed in the table, click a row to review. when clicked a form will appear below the table where the POI can be reviewed (should be scrolled to view). errors will be scrolled into view if made. a pop up will appear if a review was successfully made.
+                </p>	
+                
+				<a class="btn" href="https://edward2.solent.ac.uk/~wad1816/Project/PointsOfInterest/index.php">PointsOfInterest Home Page</a><br>
+			</div>
+
+		</div>
+	</div>
+	</wrapper>
+
+</body>
+</html>

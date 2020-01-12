@@ -1,0 +1,35 @@
+html{font-family:"Bliss-Bold","Helvetica Neue",Helvetica,Roboto,Arial,sans-serif; background-color: antiquewhite}
+#wrapper{width: 960px; margin: 0 auto; min-height:1000px; background-color:white}
+
+
+#title{font-size: 80px; text-align: left; color:white; padding: 10px 0px 0px 250px; margin: auto ; margin-left: -35px}
+
+/* NAV HEADER */
+
+#main_heading{font-size: 45px; margin-left: auto ;margin : 40px 0px 0px 0px ; text-align: center;}
+
+#mh{ height: auto; width: auto; margin-right: 00px}
+
+
+/* HEADER/NAV COLOUR */
+nav,header{background-color:darkgreen ;}
+
+/* HEADER/NAV SIZE */
+header{height: 100px ; width: auto }
+
+
+
+/*INDEX*/
+
+.main_txt{font-size: 20px; text-align: center}
+
+
+/*!!!!*/
+#rIN{height: 50px; width: 400px}
+#submit{height: 50px}
+#d1{margin-left: 250px}
+
+
+#returndiv{max-width: 600px; margin-left: 200px}
+
+#res{ font-size: 20px ; text-align: center ; margin-right: 40px }
